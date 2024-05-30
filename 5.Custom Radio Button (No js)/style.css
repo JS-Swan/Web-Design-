@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.html,body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #ffb2e7;
+    color: black;
+}
+.wrapper{
+    background: white;
+    height: 100px;
+    width: 400px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 15px;
+}
+.option{
+    border: 2px solid #ddd;
+    height: 100%;
+    width: 100%;
+    background: white;
+    margin: 0 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.option span{
+    font-size: 20px;
+    color: #808080;
+}
+.option .dot{
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.option .dot::before{
+    position: absolute;
+    content: "";
+    background: #ffb2e7;
+    top: 4px;
+    left: 4px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.5s ease; 
+    transform: scale(1.5);
+}
+#option-1:checked ~ .option_1 .dot::before,
+#option-2:checked ~ .option_2 .dot::before{
+ opacity: 1;
+ transform: scale(1);
+ 
+}
+#option-1:checked ~ .option_1 .dot,
+#option-2:checked ~ .option_2 .dot{
+ background: white;
+
+}
+#option-1:checked ~ .option_1,
+#option-2:checked ~ .option_2{
+ background: #ffb2e7;
+}
+#option-1:checked ~ .option_1 span,
+#option-2:checked ~ .option_2 span{
+ color: white;
+}
+input[type="radio"]{
+    display: none;
+}
