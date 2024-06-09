@@ -1,0 +1,43 @@
+/* ★ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  
+    
+}
+.stars input{
+    display: none;
+}
+.stars{
+    text-align: center;
+    height: 150px;
+    width: 450px;
+    background:  white;
+    
+}
+.stars label{
+    font-size: 50px;
+    color: pink;
+    margin: 0 5px;
+    float: right;
+}
+.stars label:before{
+  content: '❤︎';
+}
+.stars input:checked ~ label{
+    color: red;
+    text-shadow: 2px 2px goldenrod;
+}
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label
+{
+    color: red;
+    /* ~ label: This targets <label> elements that share the same parent as the hovered <label> and come after it in the HTML structure. */
+}
