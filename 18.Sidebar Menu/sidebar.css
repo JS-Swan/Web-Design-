@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sidebar{
+   position: fixed;
+   left: -250px;
+   width: 250px;
+   height: 100%;
+   background: #042331; 
+   transition: 0.4s;
+}
+.sidebar header{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    color: white;
+    padding-left: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    border-top: 1.5px solid rgba(225,225,225,0.1) ;
+    border-bottom: 1.5px solid black;
+    transition: all  0.4s;
+}
+ul li:hover a{
+    padding-left: 50px;
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+#check{
+    display: none;
+}
+label #btn,label #cancel{
+    position: absolute;
+    background: #063146;
+    cursor: pointer;
+}
+label #btn{
+    color: aliceblue;
+    font-size: 25px;
+    top: 25px;
+    left: 40px;
+    border-radius: 3px;
+    padding: 6px 10px;
+    transition: 0.4s;
+}
+label #cancel{
+    z-index: 111;
+    left: -210px;
+    top: 10px;
+    padding: 3px 5px;
+    border: 2px;
+    color: white;
+    transition: all 0.4s;
+}
+#check:checked ~ .sidebar{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    opacity: 0;
+    pointer-events: none;
+    left: 250px;
+}
+#check:checked ~ label #cancel{
+    left: 210px;
+}
+#check:checked ~ section{
+    margin-left: 205px;
+}
+section{
+    background: url(./pexels-dom-gould-105501-325807.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: center ;
+   transition: all 0.4s;
+}
